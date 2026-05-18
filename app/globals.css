@@ -1,0 +1,649 @@
+:root {
+  --green: #0f2e22;
+  --green-soft: #233f31;
+  --paper: #f7f5ef;
+  --paper-deep: #ebe4d6;
+  --ink: #161816;
+  --muted: #6f6b63;
+  --line: rgba(32, 35, 33, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+.hero {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fffaf1;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(11, 25, 18, 0.04), rgba(11, 25, 18, 0.42) 58%, rgba(11, 25, 18, 0.68)),
+    linear-gradient(180deg, rgba(14, 43, 31, 0.36), rgba(14, 43, 31, 0.18) 38%, rgba(14, 43, 31, 0.66));
+  z-index: 1;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+}
+
+.siteHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  padding: 24px 22px;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255, 250, 241, 0.78);
+  border-radius: 50%;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: lowercase;
+}
+
+.rightNav {
+  justify-content: flex-end;
+}
+
+.heroCenter {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.24em;
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.36);
+}
+
+.heroCenter h1 {
+  margin: 0;
+  font-size: clamp(1.05rem, 5vw, 1.52rem);
+  font-weight: 400;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.heroCenter span {
+  font-size: 0.8rem;
+}
+
+.heroCenter p {
+  margin: 0;
+  font-size: clamp(0.9rem, 4.2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.heroCenter .jpName {
+  margin-top: 2px;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+}
+
+.heroBottom {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 28px;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  text-align: center;
+}
+
+.heroBottom > p {
+  margin: 0;
+  max-width: 24rem;
+  font-size: 0.86rem;
+  line-height: 1.9;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: inherit;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: lowercase;
+}
+
+.heroLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 0;
+  align-items: center;
+  font-family: Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.buttonLink,
+button {
+  border: 1px solid currentColor;
+  padding: 11px 18px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.projectIntro {
+  padding: 84px 28px 74px;
+  text-align: center;
+}
+
+.projectIntro h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.projectIntro p:not(.eyebrow) {
+  margin: 28px auto 0;
+  max-width: 36rem;
+  font-size: 0.95rem;
+  line-height: 2.3;
+}
+
+.projectIntro span {
+  display: block;
+  margin-top: 30px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.textImage {
+  display: grid;
+  gap: 46px;
+  padding: 92px 28px;
+}
+
+.textBlock h2,
+.quietStatement h2,
+.sectionLead h2,
+.seasonSection h2,
+.contactIntro h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: clamp(0.98rem, 3vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.textBlock > p:last-child,
+.quietStatement > p:last-child,
+.sectionLead > p,
+.contactIntro > p {
+  margin: 26px 0 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 2.35;
+}
+
+.framedImage {
+  position: relative;
+  min-height: 58svh;
+  overflow: hidden;
+}
+
+.imageMessage {
+  position: relative;
+  min-height: 78svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fffaf1;
+  text-align: center;
+  padding: 96px 28px;
+}
+
+.imageMessage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(15, 46, 34, 0.2), rgba(15, 46, 34, 0.62)),
+    rgba(0, 0, 0, 0.16);
+  z-index: 1;
+}
+
+.imageMessageText {
+  position: relative;
+  z-index: 2;
+  max-width: 43rem;
+}
+
+.imageMessageText h2 {
+  margin: 0;
+  font-size: clamp(0.98rem, 3vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.imageMessageText > p:last-child {
+  margin: 28px auto 0;
+  max-width: 40rem;
+  font-size: 0.9rem;
+  line-height: 2.35;
+}
+
+.quietStatement {
+  background: var(--green);
+  color: #fffaf1;
+  padding: 96px 28px;
+}
+
+.quietStatement h2 {
+  color: #fffaf1;
+}
+
+.quietStatement > p:last-child {
+  color: rgba(255, 250, 241, 0.86);
+  max-width: 43rem;
+}
+
+.productsSection {
+  padding: 96px 28px 72px;
+}
+
+.sectionLead {
+  max-width: 42rem;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.productGroups {
+  display: grid;
+  gap: 82px;
+}
+
+.productGroup {
+  display: grid;
+  gap: 28px;
+}
+
+.productGroupImage {
+  position: relative;
+  min-height: 52svh;
+  overflow: hidden;
+  color: #fffaf1;
+}
+
+.productGroupImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 46, 34, 0.28);
+}
+
+.productGroupImage p {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  letter-spacing: 0.26em;
+  white-space: nowrap;
+}
+
+.productList {
+  display: grid;
+  gap: 0;
+}
+
+.productRow {
+  border-top: 1px solid var(--line);
+  padding: 26px 0 28px;
+}
+
+.productRow .category {
+  margin: 0 0 10px;
+  color: var(--green-soft);
+  font-family: Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+
+.productRow h3 {
+  margin: 0;
+  color: var(--green);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.productRow > p:not(.category) {
+  margin: 14px 0 20px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 2.05;
+}
+
+dl {
+  margin: 0;
+  display: grid;
+  gap: 9px;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+dl div {
+  display: grid;
+  grid-template-columns: 4.6rem 1fr;
+  gap: 16px;
+}
+
+.seasonRow {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 16px;
+}
+
+dt,
+.seasonRow span {
+  color: var(--muted);
+}
+
+dd,
+.seasonRow p {
+  margin: 0;
+}
+
+.seasonSection {
+  display: grid;
+  gap: 36px;
+  padding: 90px 28px;
+  background: var(--paper-deep);
+}
+
+.seasonList {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.seasonRow {
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.7;
+}
+
+.contactSection {
+  display: grid;
+  gap: 40px;
+  padding: 94px 28px 76px;
+  background: #fbf8f1;
+}
+
+.contactForm {
+  display: grid;
+  gap: 20px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--green);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+label span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(18, 50, 38, 0.36);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  padding: 12px 2px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 11rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 1px solid rgba(18, 50, 38, 0.34);
+  outline-offset: 4px;
+}
+
+button {
+  justify-self: start;
+  margin-top: 10px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px 28px;
+  background: var(--green);
+  color: #fffaf1;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer div {
+  display: flex;
+  gap: 18px;
+}
+
+@media (min-width: 760px) {
+  .siteHeader,
+  .heroBottom,
+  .projectIntro,
+  .textImage,
+  .quietStatement,
+  .productsSection,
+  .seasonSection,
+  .contactSection,
+  footer {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .heroBottom {
+    left: 6vw;
+    right: 6vw;
+    bottom: 38px;
+  }
+
+  .textImage,
+  .textImage.reverse {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+  }
+
+  .textImage.reverse .textBlock {
+    order: 2;
+  }
+
+  .framedImage {
+    min-height: 70vh;
+  }
+
+  .productGroup {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 6vw;
+    align-items: start;
+  }
+
+  .seasonSection,
+  .contactSection {
+    grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .seasonSection {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .contactSection {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .contactForm {
+    grid-template-columns: 1fr;
+  }
+
+  .contactForm .full,
+  .contactForm button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1160px) {
+  .heroBottom {
+    grid-template-columns: 1fr auto;
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 759px) {
+  .siteHeader {
+    position: relative;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 14px 20px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    justify-content: flex-start;
+  }
+
+  .heroImage {
+    top: 82px;
+  }
+
+  .brandMark {
+    width: 44px;
+    height: 44px;
+    border-color: var(--line);
+    color: var(--green);
+  }
+
+  nav {
+    display: none;
+  }
+
+  .rightNav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .rightNav a:first-child {
+    display: none;
+  }
+
+  .rightNav a:last-child {
+    display: block;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    color: transparent;
+    position: relative;
+  }
+
+  .rightNav a:last-child::before,
+  .rightNav a:last-child::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    top: 15px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .rightNav a:last-child::after {
+    transform: rotate(90deg);
+  }
+
+  .heroCenter {
+    min-height: calc(100svh - 82px);
+    padding: 82px 28px 190px;
+  }
+}
