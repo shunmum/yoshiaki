@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { products, seasonRows } from "../data/products";
+import { products } from "../data/products";
 import { siteConfig } from "../config/site";
 
 const visibleProducts = products
@@ -46,7 +46,6 @@ export default function Home() {
             {siteConfig.brandInitials}
           </a>
           <nav className="rightNav" aria-label="補助ナビゲーション">
-            <a href="#season">season</a>
             <a href="#contact">contact</a>
           </nav>
         </header>
@@ -161,21 +160,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="seasonSection" id="season">
-        <div>
-          <p className="eyebrow">Season</p>
-          <h2>配送時期</h2>
-        </div>
-        <div className="seasonList">
-          {seasonRows.map((row) => (
-            <div className="seasonRow" key={row.label}>
-              <span>{row.label}</span>
-              <p>{row.season}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="contactSection" id="contact">
         <div className="contactIntro">
           <p className="eyebrow">Contact</p>
@@ -271,14 +255,6 @@ export default function Home() {
 
       <footer>
         <p>©{siteConfig.farmName}</p>
-        <div>
-          <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
-            Instagram
-          </a>
-          <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
-            Facebook
-          </a>
-        </div>
       </footer>
     </main>
   );
