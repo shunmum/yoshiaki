@@ -449,16 +449,63 @@ dd,
   background: var(--paper-deep);
 }
 
+.letterSection {
+  display: grid;
+  gap: 40px;
+  padding: 94px 28px 76px;
+  background: #fbf8f1;
+}
+
+.letterIntro {
+  text-align: center;
+}
+
 .aboutIntro {
   text-align: center;
 }
 
+.letterIntro h2,
 .aboutIntro h2 {
   margin: 0;
   color: var(--green);
   font-size: clamp(0.98rem, 3vw, 1.4rem);
   font-weight: 400;
   line-height: 1.5;
+}
+
+.letterIntro p {
+  margin: 26px auto 0;
+  max-width: 36rem;
+  font-size: 0.9rem;
+  line-height: 2.35;
+}
+
+.letterList {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.letterItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--green);
+}
+
+.letterItem span {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.letterItem small {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
 }
 
 .aboutList {
@@ -548,6 +595,7 @@ footer p {
   .textImage,
   .quietStatement,
   .productsSection,
+  .letterSection,
   .aboutSection,
   .contactSection,
   footer {
@@ -591,6 +639,7 @@ footer p {
     margin: 0 auto;
   }
 
+  .letterSection,
   .aboutSection {
     max-width: 760px;
     margin: 0 auto;

@@ -17,6 +17,32 @@ export const siteConfig = {
     facebook:
       "https://www.facebook.com/p/%E3%83%95%E3%83%AB%E3%83%BC%E3%83%84%E3%82%B0%E3%83%AD%E3%82%A2%E3%83%BC%E6%BE%A4%E7%99%BB-100063480126606/"
   },
+  grapeLetters: [
+    {
+      label: "2025年8月発行",
+      href: "/pdfs/grape-letter-2025.pdf"
+    },
+    {
+      label: "2024年8月28日発行",
+      href: "/pdfs/grape-letter-2024.pdf"
+    },
+    {
+      label: "2023年8月17日発行",
+      href: "/pdfs/grape-letter-2023.pdf"
+    },
+    {
+      label: "2022年8月21日発行",
+      href: "/pdfs/grape-letter-2022.pdf"
+    },
+    {
+      label: "2021年8月18日発行",
+      href: "/pdfs/grape-letter-2021.pdf"
+    },
+    {
+      label: "2020年8月26日発行",
+      href: "/pdfs/grape-letter-2020.pdf"
+    }
+  ],
   images: {
     hero:
       "https://images.unsplash.com/photo-1769967190366-1deaf0c78568?auto=format&fit=crop&w=1800&q=85",

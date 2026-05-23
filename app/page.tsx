@@ -161,6 +161,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="letterSection" id="grape-letter">
+        <div className="letterIntro">
+          <p className="eyebrow">Letter</p>
+          <h2>葡萄だより</h2>
+          <p>
+            畑の季節や収穫のことをお知らせする葡萄だよりです。各号のPDFをご覧いただけます。
+          </p>
+        </div>
+        <div className="letterList" aria-label="葡萄だよりPDF一覧">
+          {siteConfig.grapeLetters.map((letter) => (
+            <a href={letter.href} className="letterItem" key={letter.label} target="_blank" rel="noreferrer">
+              <span>{letter.label}</span>
+              <small>PDF</small>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="aboutSection" id="about">
         <div className="aboutIntro">
           <p className="eyebrow">About</p>
