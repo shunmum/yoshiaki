@@ -234,7 +234,7 @@ export default function Home() {
         </div>
         <form className="contactForm" action={`mailto:${siteConfig.contactEmail}`} method="post" encType="text/plain">
           <label>
-            お問い合わせ種別 <span>必須</span>
+            お問い合わせ種別 <span>※必須</span>
             <select name="inquiryType" required defaultValue="">
               <option value="" disabled>
                 選択してください
@@ -244,11 +244,11 @@ export default function Home() {
             </select>
           </label>
           <label>
-            お名前 <span>必須</span>
+            お名前 <span>※必須</span>
             <input name="name" required autoComplete="name" />
           </label>
           <label>
-            メールアドレス <span>必須</span>
+            メールアドレス <span>※必須</span>
             <input name="email" type="email" required autoComplete="email" />
           </label>
           <label>
@@ -268,7 +268,7 @@ export default function Home() {
             <input name="address" autoComplete="street-address" />
           </label>
           <label>
-            ご希望の商品 <span>必須</span>
+            ご希望の商品 <span>※必須</span>
             <select name="product" required defaultValue="">
               <option value="" disabled>
                 選択してください
@@ -310,7 +310,7 @@ export default function Home() {
             </select>
           </label>
           <label className="full">
-            お問い合わせ内容 <span>必須</span>
+            お問い合わせ内容 <span>※必須</span>
             <textarea name="message" rows={6} required />
           </label>
           <button type="submit">メールで相談する</button>

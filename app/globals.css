@@ -442,6 +442,14 @@ dd,
   background: #fbf8f1;
 }
 
+.contactIntro,
+.contactForm {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .aboutSection {
   display: grid;
   gap: 36px;
@@ -464,6 +472,8 @@ dd,
 }
 
 .aboutIntro {
+  margin: 0 auto;
+  max-width: 760px;
   text-align: center;
 }
 
@@ -514,6 +524,9 @@ dd,
 .aboutList {
   border-top: 1px solid var(--line);
   gap: 0;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .aboutList div {
@@ -540,7 +553,7 @@ label {
 }
 
 label span {
-  color: var(--muted);
+  color: #9f3328;
   font-size: 0.72rem;
 }
 
@@ -637,14 +650,16 @@ footer p {
 
   .contactSection {
     grid-template-columns: 1fr;
-    max-width: 760px;
+  }
+
+  .aboutSection {
     margin: 0 auto;
   }
 
-  .letterSection,
-  .aboutSection {
+  .letterSection {
     max-width: 760px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .letterSection {
