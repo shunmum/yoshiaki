@@ -46,6 +46,7 @@ export default function Home() {
             {siteConfig.brandInitials}
           </a>
           <nav className="rightNav" aria-label="補助ナビゲーション">
+            <a href="#about">about</a>
             <a href="#contact">contact</a>
           </nav>
         </header>
@@ -158,6 +159,51 @@ export default function Home() {
             </section>
           ))}
         </div>
+      </section>
+
+      <section className="aboutSection" id="about">
+        <div className="aboutIntro">
+          <p className="eyebrow">About</p>
+          <h2>農園について</h2>
+        </div>
+        <dl className="aboutList">
+          <div>
+            <dt>農園名</dt>
+            <dd>{siteConfig.farmName}</dd>
+          </div>
+          <div>
+            <dt>共同代表</dt>
+            <dd>{siteConfig.representatives}</dd>
+          </div>
+          <div>
+            <dt>住所</dt>
+            <dd>
+              {siteConfig.postalCode} {siteConfig.locationLabel}
+            </dd>
+          </div>
+          <div>
+            <dt>メール</dt>
+            <dd>
+              <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Instagram</dt>
+            <dd>
+              <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
+                {siteConfig.sns.instagram}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt>Facebook</dt>
+            <dd>
+              <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
+                {siteConfig.sns.facebook}
+              </a>
+            </dd>
+          </div>
+        </dl>
       </section>
 
       <section className="contactSection" id="contact">

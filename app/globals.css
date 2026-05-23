@@ -442,6 +442,40 @@ dd,
   background: #fbf8f1;
 }
 
+.aboutSection {
+  display: grid;
+  gap: 36px;
+  padding: 94px 28px 76px;
+  background: var(--paper-deep);
+}
+
+.aboutIntro {
+  text-align: center;
+}
+
+.aboutIntro h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: clamp(0.98rem, 3vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.aboutList {
+  border-top: 1px solid var(--line);
+  gap: 0;
+}
+
+.aboutList div {
+  grid-template-columns: minmax(5.5rem, 0.34fr) minmax(0, 1fr);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.aboutList dd {
+  overflow-wrap: anywhere;
+}
+
 .contactForm {
   display: grid;
   gap: 20px;
@@ -514,6 +548,7 @@ footer p {
   .textImage,
   .quietStatement,
   .productsSection,
+  .aboutSection,
   .contactSection,
   footer {
     padding-left: 6vw;
@@ -552,6 +587,11 @@ footer p {
 
   .contactSection {
     grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .aboutSection {
     max-width: 760px;
     margin: 0 auto;
   }
