@@ -452,8 +452,11 @@ dd,
 .letterSection {
   display: grid;
   gap: 40px;
-  padding: 94px 28px 76px;
+  margin: 96px 28px;
+  padding: 56px 28px;
+  border: 1px solid rgba(15, 46, 34, 0.18);
   background: #fbf8f1;
+  box-shadow: 0 18px 42px rgba(15, 46, 34, 0.06);
 }
 
 .letterIntro {
@@ -595,7 +598,6 @@ footer p {
   .textImage,
   .quietStatement,
   .productsSection,
-  .letterSection,
   .aboutSection,
   .contactSection,
   footer {
@@ -643,6 +645,12 @@ footer p {
   .aboutSection {
     max-width: 760px;
     margin: 0 auto;
+  }
+
+  .letterSection {
+    margin-top: 110px;
+    margin-bottom: 110px;
+    padding: 70px 72px;
   }
 
   .contactForm {
