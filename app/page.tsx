@@ -23,9 +23,37 @@ const productImages: Record<string, string> = {
   ジャム: siteConfig.images.jam
 };
 
+function getProductImage(product: (typeof visibleProducts)[number]) {
+  return productImages[product.category];
+}
+
 export default function Home() {
   return (
     <main>
+      <header className="siteHeader">
+        <a href="#top" className="siteBrand" aria-label="トップへ戻る">
+          <Image src={siteConfig.logo} alt="" width={60} height={36} />
+          <span>{siteConfig.farmName}</span>
+        </a>
+        <nav className="siteNav" aria-label="主要ナビゲーション">
+          <a href="#message" title="私たちについて">
+            about
+          </a>
+          <a href="#products" title="農産物">
+            produce
+          </a>
+          <a href="#contact" title="お問い合わせ">
+            contact
+          </a>
+          <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer" title="Instagram">
+            IG
+          </a>
+          <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer" title="Facebook">
+            FB
+          </a>
+        </nav>
+      </header>
+
       <section className="hero" id="top">
         <div className="heroImage">
           <Image
@@ -36,49 +64,12 @@ export default function Home() {
             sizes="100vw"
           />
         </div>
-        <header className="siteHeader">
-          <nav className="leftNav" aria-label="主要ナビゲーション">
-            <a href="#products">products</a>
-            <a href="#message">message</a>
-            <a href="#history">history</a>
-          </nav>
-          <a href="#top" className="brandMark" aria-label="トップへ戻る">
-            {siteConfig.brandInitials}
-          </a>
-          <nav className="rightNav" aria-label="補助ナビゲーション">
-            <a href="#about">about</a>
-            <a href="#contact">contact</a>
-          </nav>
-        </header>
         <div className="heroCenter">
-          <h1>{siteConfig.farmNameEn}</h1>
-          <span>×</span>
-          <p>organic fruits and natural wine</p>
-          <p className="jpName">{siteConfig.farmName}</p>
+          <h1>自然と共生する畑から。</h1>
+          <p>
+            多様な生物が棲む環境で育てたぶどうとキウイフルーツ。畑に流れる時間を、できるだけそのまま食卓へ届けます。
+          </p>
         </div>
-        <div className="heroBottom">
-          <p>山梨・牧丘の畑から、自然派ワインと季節の果実をお届けします。</p>
-          <div className="heroLinks" aria-label="SNSとお問い合わせ">
-            <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
-              Instagram
-            </a>
-            <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
-              Facebook
-            </a>
-            <a className="buttonLink" href="#contact">
-              お問い合わせ
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="projectIntro" aria-label="農園の紹介">
-        <p className="eyebrow">project</p>
-        <h2>自然と共生する畑から。</h2>
-        <p>
-          多様な生物が棲む環境で育てたぶどうとキウイフルーツ。畑に流れる時間を、できるだけそのまま食卓へ届けます。
-        </p>
-        <span>{siteConfig.locationLabel}</span>
       </section>
 
       <TextImageSection
@@ -123,36 +114,37 @@ export default function Home() {
         <div className="productGroups">
           {Object.entries(groupedProducts).map(([category, categoryProducts]) => (
             <section className="productGroup" key={category}>
-              <div className="productGroupImage">
-                <Image
-                  src={productImages[category]}
-                  alt={`${category}のイメージ写真`}
-                  fill
-                  loading="eager"
-                  sizes="(min-width: 900px) 42vw, 100vw"
-                />
-                <p>{category}</p>
-              </div>
+              <p className="productGroupTitle">{category}</p>
               <div className="productList">
                 {categoryProducts.map((product) => (
                   <article className="productRow" key={`${product.category}-${product.name}`}>
-                    <p className="category">{product.category}</p>
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                    <dl>
-                      <div>
-                        <dt>volume</dt>
-                        <dd>{product.volume}</dd>
-                      </div>
-                      <div>
-                        <dt>season</dt>
-                        <dd>{product.season}</dd>
-                      </div>
-                      <div>
-                        <dt>price</dt>
-                        <dd>{product.price}</dd>
-                      </div>
-                    </dl>
+                    <div className="productText">
+                      <p className="category">{product.category}</p>
+                      <h3>{product.name}</h3>
+                      <p>{product.description}</p>
+                      <dl>
+                        <div>
+                          <dt>volume</dt>
+                          <dd>{product.volume}</dd>
+                        </div>
+                        <div>
+                          <dt>season</dt>
+                          <dd>{product.season}</dd>
+                        </div>
+                        <div>
+                          <dt>price</dt>
+                          <dd>{product.price}</dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <div className="productThumb">
+                      <Image
+                        src={getProductImage(product)}
+                        alt={`${product.name}のイメージ写真`}
+                        fill
+                        sizes="(min-width: 900px) 280px, 100vw"
+                      />
+                    </div>
                   </article>
                 ))}
               </div>
@@ -186,7 +178,7 @@ export default function Home() {
         </div>
         <dl className="aboutList">
           <div>
-            <dt>農園名</dt>
+            <dt>屋号</dt>
             <dd>{siteConfig.farmName}</dd>
           </div>
           <div>
@@ -206,7 +198,7 @@ export default function Home() {
             </dd>
           </div>
           <div>
-            <dt>Instagram</dt>
+            <dt>Instagramリンク</dt>
             <dd>
               <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
                 {siteConfig.sns.instagram}
@@ -214,7 +206,7 @@ export default function Home() {
             </dd>
           </div>
           <div>
-            <dt>Facebook</dt>
+            <dt>FACEBOOKリンク</dt>
             <dd>
               <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
                 {siteConfig.sns.facebook}
@@ -235,13 +227,7 @@ export default function Home() {
         <form className="contactForm" action={`mailto:${siteConfig.contactEmail}`} method="post" encType="text/plain">
           <label>
             お問い合わせ種別 <span>※必須</span>
-            <select name="inquiryType" required defaultValue="">
-              <option value="" disabled>
-                選択してください
-              </option>
-              <option>ご注文</option>
-              <option>その他</option>
-            </select>
+            <input name="inquiryType" required placeholder="例：ご注文、その他" />
           </label>
           <label>
             お名前 <span>※必須</span>
@@ -257,11 +243,7 @@ export default function Home() {
           </label>
           <label>
             ご希望の連絡方法
-            <select name="preferredContact" defaultValue="">
-              <option value="">選択してください</option>
-              <option>メール</option>
-              <option>電話</option>
-            </select>
+            <input name="preferredContact" placeholder="例：メール、電話" />
           </label>
           <label>
             住所
@@ -269,16 +251,7 @@ export default function Home() {
           </label>
           <label>
             ご希望の商品 <span>※必須</span>
-            <select name="product" required defaultValue="">
-              <option value="" disabled>
-                選択してください
-              </option>
-              {visibleProducts.map((product) => (
-                <option value={product.name} key={product.name}>
-                  {product.name}
-                </option>
-              ))}
-            </select>
+            <input name="product" required placeholder="例：ブドウ セットA、ブラックペガール 2021" />
           </label>
           <label>
             ご希望数量
@@ -286,12 +259,7 @@ export default function Home() {
           </label>
           <label>
             用途
-            <select name="purpose" defaultValue="">
-              <option value="">選択してください</option>
-              <option>自宅用</option>
-              <option>贈答用</option>
-              <option>その他</option>
-            </select>
+            <input name="purpose" placeholder="例：自宅用、贈答用、その他" />
           </label>
           <label>
             配送希望時期
@@ -299,15 +267,7 @@ export default function Home() {
           </label>
           <label>
             どちらでお知りになりましたか
-            <select name="source" defaultValue="">
-              <option value="">選択してください</option>
-              <option>マルシェ</option>
-              <option>Instagram</option>
-              <option>Facebook</option>
-              <option>ご紹介</option>
-              <option>以前購入したことがある</option>
-              <option>その他</option>
-            </select>
+            <input name="source" placeholder="例：Instagram、ご紹介、以前購入したことがある" />
           </label>
           <label className="full">
             お問い合わせ内容 <span>※必須</span>
@@ -318,7 +278,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <p>©{siteConfig.farmName}</p>
+        <p>©2026{siteConfig.farmName}All Right Reserved.</p>
       </footer>
     </main>
   );

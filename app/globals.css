@@ -34,7 +34,7 @@ img {
 }
 
 .hero {
-  min-height: 100svh;
+  min-height: calc(100svh - 76px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,40 +59,50 @@ img {
 }
 
 .siteHeader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
+  position: relative;
+  z-index: 5;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 24px;
-  padding: 24px 22px;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  padding: 16px 22px;
   align-items: center;
+  background: var(--paper);
+  color: var(--green);
   font-family: Georgia, "Times New Roman", serif;
 }
 
-.brandMark {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  border: 1px solid rgba(255, 250, 241, 0.78);
-  border-radius: 50%;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+.siteBrand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+
+.siteBrand img {
+  width: 56px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.siteBrand span {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  font-size: clamp(0.78rem, 2.8vw, 1rem);
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 nav {
   display: flex;
-  gap: 28px;
+  gap: 18px;
   align-items: center;
-  font-size: 0.78rem;
-  letter-spacing: 0.24em;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
   text-transform: lowercase;
 }
 
-.rightNav {
+.siteNav {
+  flex-wrap: wrap;
   justify-content: flex-end;
 }
 
@@ -101,55 +111,25 @@ nav {
   z-index: 2;
   display: grid;
   place-items: center;
-  gap: 14px;
+  gap: 22px;
+  padding: 0 28px;
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: 0.24em;
+  letter-spacing: 0;
   text-shadow: 0 1px 24px rgba(0, 0, 0, 0.36);
 }
 
 .heroCenter h1 {
   margin: 0;
-  font-size: clamp(1.05rem, 5vw, 1.52rem);
+  font-size: clamp(1.28rem, 5vw, 2.25rem);
   font-weight: 400;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-
-.heroCenter span {
-  font-size: 0.8rem;
+  line-height: 1.55;
 }
 
 .heroCenter p {
   margin: 0;
-  font-size: clamp(0.9rem, 4.2vw, 1.15rem);
-  line-height: 1.7;
-}
-
-.heroCenter .jpName {
-  margin-top: 2px;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-}
-
-.heroBottom {
-  position: absolute;
-  z-index: 2;
-  left: 20px;
-  right: 20px;
-  bottom: 28px;
-  display: grid;
-  gap: 18px;
-  justify-items: center;
-  text-align: center;
-}
-
-.heroBottom > p {
-  margin: 0;
-  max-width: 24rem;
-  font-size: 0.86rem;
-  line-height: 1.9;
+  max-width: 40rem;
+  font-size: clamp(0.82rem, 2.3vw, 0.98rem);
+  line-height: 2.2;
 }
 
 .eyebrow {
@@ -179,37 +159,6 @@ button {
   background: transparent;
   color: inherit;
   font: inherit;
-}
-
-.projectIntro {
-  display: grid;
-  justify-items: center;
-  padding: 84px 28px 74px;
-  text-align: center;
-}
-
-.projectIntro h2 {
-  margin: 0;
-  color: var(--green);
-  font-size: clamp(1rem, 3.5vw, 1.4rem);
-  font-weight: 400;
-  line-height: 1.55;
-}
-
-.projectIntro p:not(.eyebrow) {
-  margin: 28px auto 0;
-  max-width: 36rem;
-  font-size: 0.95rem;
-  line-height: 2.3;
-}
-
-.projectIntro span {
-  display: block;
-  margin-top: 30px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  color: var(--muted);
 }
 
 .textImage {
@@ -319,38 +268,23 @@ button {
 
 .productGroups {
   display: grid;
-  gap: 82px;
+  gap: 70px;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .productGroup {
   display: grid;
-  gap: 28px;
+  gap: 18px;
 }
 
-.productGroupImage {
-  position: relative;
-  min-height: 52svh;
-  overflow: hidden;
-  color: #fffaf1;
-}
-
-.productGroupImage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 46, 34, 0.28);
-}
-
-.productGroupImage p {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
+.productGroupTitle {
   margin: 0;
-  transform: translate(-50%, -50%);
+  color: var(--green);
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(0.9rem, 3vw, 1rem);
   letter-spacing: 0.26em;
-  white-space: nowrap;
+  text-transform: lowercase;
 }
 
 .productList {
@@ -359,11 +293,13 @@ button {
 }
 
 .productRow {
+  display: grid;
+  gap: 22px;
   border-top: 1px solid var(--line);
-  padding: 26px 0 28px;
+  padding: 30px 0;
 }
 
-.productRow .category {
+.productText .category {
   margin: 0 0 10px;
   color: var(--green-soft);
   font-family: Georgia, serif;
@@ -371,7 +307,7 @@ button {
   letter-spacing: 0.14em;
 }
 
-.productRow h3 {
+.productText h3 {
   margin: 0;
   color: var(--green);
   font-size: 0.92rem;
@@ -379,11 +315,17 @@ button {
   line-height: 1.65;
 }
 
-.productRow > p:not(.category) {
+.productText > p:not(.category) {
   margin: 14px 0 20px;
   color: var(--muted);
   font-size: 0.86rem;
   line-height: 2.05;
+}
+
+.productThumb {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
 }
 
 dl {
@@ -606,8 +548,6 @@ footer p {
 
 @media (min-width: 760px) {
   .siteHeader,
-  .heroBottom,
-  .projectIntro,
   .textImage,
   .quietStatement,
   .productsSection,
@@ -616,12 +556,6 @@ footer p {
   footer {
     padding-left: 6vw;
     padding-right: 6vw;
-  }
-
-  .heroBottom {
-    left: 6vw;
-    right: 6vw;
-    bottom: 38px;
   }
 
   .textImage,
@@ -639,9 +573,13 @@ footer p {
   }
 
   .productGroup {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 22px;
+  }
+
+  .productRow {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.45fr);
     gap: 6vw;
-    align-items: start;
+    align-items: center;
   }
 
   .contactSection {
@@ -678,77 +616,19 @@ footer p {
   }
 }
 
-@media (min-width: 1160px) {
-  .heroBottom {
-    grid-template-columns: 1fr auto;
-    justify-items: start;
-    text-align: left;
-  }
-}
-
 @media (max-width: 759px) {
   .siteHeader {
-    position: relative;
-    background: var(--paper);
-    color: var(--ink);
-    padding: 14px 20px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 18px;
   }
 
-  .hero {
-    min-height: 100svh;
+  .siteNav {
     justify-content: flex-start;
-  }
-
-  .heroImage {
-    top: 82px;
-  }
-
-  .brandMark {
-    width: 44px;
-    height: 44px;
-    border-color: var(--line);
-    color: var(--green);
-  }
-
-  nav {
-    display: none;
-  }
-
-  .rightNav {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .rightNav a:first-child {
-    display: none;
-  }
-
-  .rightNav a:last-child {
-    display: block;
-    width: 32px;
-    height: 32px;
-    overflow: hidden;
-    color: transparent;
-    position: relative;
-  }
-
-  .rightNav a:last-child::before,
-  .rightNav a:last-child::after {
-    content: "";
-    position: absolute;
-    left: 7px;
-    right: 7px;
-    top: 15px;
-    height: 1px;
-    background: var(--ink);
-  }
-
-  .rightNav a:last-child::after {
-    transform: rotate(90deg);
+    gap: 12px 16px;
   }
 
   .heroCenter {
-    min-height: calc(100svh - 82px);
-    padding: 82px 28px 190px;
+    padding: 0 24px;
   }
 }
