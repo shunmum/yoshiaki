@@ -106,6 +106,33 @@ nav {
   justify-content: flex-end;
 }
 
+.swapNav {
+  display: grid;
+  place-items: center;
+  min-width: 8.8em;
+}
+
+.swapNav span {
+  grid-area: 1 / 1;
+  transition: opacity 160ms ease;
+}
+
+.swapNav .navJa {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  letter-spacing: 0;
+  opacity: 0;
+}
+
+.swapNav:hover .navEn,
+.swapNav:focus-visible .navEn {
+  opacity: 0;
+}
+
+.swapNav:hover .navJa,
+.swapNav:focus-visible .navJa {
+  opacity: 1;
+}
+
 .heroCenter {
   position: relative;
   z-index: 2;

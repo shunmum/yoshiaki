@@ -36,14 +36,17 @@ export default function Home() {
           <span>{siteConfig.farmName}</span>
         </a>
         <nav className="siteNav" aria-label="主要ナビゲーション">
-          <a href="#message" title="私たちについて">
-            about
+          <a href="#message" className="swapNav" aria-label="私たちについて">
+            <span className="navEn">about</span>
+            <span className="navJa" aria-hidden="true">私たちについて</span>
           </a>
-          <a href="#products" title="農産物">
-            produce
+          <a href="#products" className="swapNav" aria-label="農産物">
+            <span className="navEn">produce</span>
+            <span className="navJa" aria-hidden="true">農産物</span>
           </a>
-          <a href="#contact" title="お問い合わせ">
-            contact
+          <a href="#contact" className="swapNav" aria-label="お問い合わせ">
+            <span className="navEn">contact</span>
+            <span className="navJa" aria-hidden="true">お問い合わせ</span>
           </a>
           <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer" title="Instagram">
             IG
