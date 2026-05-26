@@ -48,11 +48,25 @@ export default function Home() {
             <span className="navEn">contact</span>
             <span className="navJa" aria-hidden="true">お問い合わせ</span>
           </a>
-          <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer" title="Instagram">
-            IG
+          <a
+            href={siteConfig.sns.instagram}
+            className="socialNav"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <InstagramIcon />
           </a>
-          <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer" title="Facebook">
-            FB
+          <a
+            href={siteConfig.sns.facebook}
+            className="socialNav"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <FacebookIcon />
           </a>
         </nav>
       </header>
@@ -284,6 +298,24 @@ export default function Home() {
         <p>©2026{siteConfig.farmName}All Right Reserved.</p>
       </footer>
     </main>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="4" y="4" width="16" height="16" rx="5" />
+      <circle cx="12" cy="12" r="3.7" />
+      <circle cx="16.9" cy="7.1" r="0.9" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M14.2 8.2h2.3V4.6c-.4-.1-1.8-.2-3.4-.2-3.3 0-5.5 2-5.5 5.7v3.2H4v4h3.6V24h4.3v-6.7h3.6l.6-4h-4.2v-2.8c0-1.2.3-2.3 2.3-2.3Z" />
+    </svg>
   );
 }
 
