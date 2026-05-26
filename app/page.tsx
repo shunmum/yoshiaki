@@ -222,8 +222,8 @@ export default function Home() {
             <input name="address" autoComplete="street-address" />
           </label>
           <label>
-            ご希望の商品 <span>※必須</span>
-            <input name="product" required placeholder="例：ブドウ セットA、ブラックペガール 2021" />
+            ご希望の商品
+            <input name="product" placeholder="例：ブドウ セットA、ブラックペガール 2021" />
           </label>
           <label>
             ご希望数量
@@ -242,8 +242,8 @@ export default function Home() {
             <input name="source" placeholder="例：Instagram、ご紹介、以前購入したことがある" />
           </label>
           <label className="full">
-            お問い合わせ内容 <span>※必須</span>
-            <textarea name="message" rows={6} required />
+            お問い合わせ内容
+            <textarea name="message" rows={6} />
           </label>
           <button type="submit">メールで相談する</button>
         </form>
