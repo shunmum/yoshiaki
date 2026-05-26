@@ -245,7 +245,7 @@ export default function Home() {
             お問い合わせ内容
             <textarea name="message" rows={6} />
           </label>
-          <button type="submit">メールで相談する</button>
+          <button type="submit">送信する</button>
         </form>
       </section>
 
