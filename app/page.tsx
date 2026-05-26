@@ -188,51 +188,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="aboutSection" id="about">
-        <div className="aboutIntro">
-          <p className="eyebrow">About</p>
-          <h2>農園について</h2>
-        </div>
-        <dl className="aboutList">
-          <div>
-            <dt>屋号</dt>
-            <dd>{siteConfig.farmName}</dd>
-          </div>
-          <div>
-            <dt>共同代表</dt>
-            <dd>{siteConfig.representatives}</dd>
-          </div>
-          <div>
-            <dt>住所</dt>
-            <dd>
-              {siteConfig.postalCode} {siteConfig.locationLabel}
-            </dd>
-          </div>
-          <div>
-            <dt>メール</dt>
-            <dd>
-              <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
-            </dd>
-          </div>
-          <div>
-            <dt>Instagramリンク</dt>
-            <dd>
-              <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
-                {siteConfig.sns.instagram}
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt>FACEBOOKリンク</dt>
-            <dd>
-              <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
-                {siteConfig.sns.facebook}
-              </a>
-            </dd>
-          </div>
-        </dl>
-      </section>
-
       <section className="contactSection" id="contact">
         <div className="contactIntro">
           <p className="eyebrow">Contact</p>
@@ -292,6 +247,51 @@ export default function Home() {
           </label>
           <button type="submit">メールで相談する</button>
         </form>
+      </section>
+
+      <section className="aboutSection" id="about">
+        <div className="aboutIntro">
+          <p className="eyebrow">About</p>
+          <h2>農園について</h2>
+        </div>
+        <dl className="aboutList">
+          <div>
+            <dt>屋号</dt>
+            <dd>{siteConfig.farmName}</dd>
+          </div>
+          <div>
+            <dt>共同代表</dt>
+            <dd>{siteConfig.representatives}</dd>
+          </div>
+          <div>
+            <dt>住所</dt>
+            <dd>
+              {siteConfig.postalCode} {siteConfig.locationLabel}
+            </dd>
+          </div>
+          <div>
+            <dt>メール</dt>
+            <dd>
+              <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Instagramリンク</dt>
+            <dd>
+              <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
+                {siteConfig.sns.instagram}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt>FACEBOOKリンク</dt>
+            <dd>
+              <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
+                {siteConfig.sns.facebook}
+              </a>
+            </dd>
+          </div>
+        </dl>
       </section>
 
       <footer>
