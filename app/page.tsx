@@ -27,6 +27,14 @@ function getProductImage(product: (typeof visibleProducts)[number]) {
   return productImages[product.category];
 }
 
+function shouldShowProductImage(product: (typeof visibleProducts)[number], productIndex: number) {
+  if (product.category === "キウイフルーツ" || product.category === "ジュース") {
+    return productIndex === 0;
+  }
+
+  return true;
+}
+
 export default function Home() {
   return (
     <main>
@@ -133,37 +141,46 @@ export default function Home() {
             <section className="productGroup" key={category}>
               <p className="productGroupTitle">{category}</p>
               <div className="productList">
-                {categoryProducts.map((product) => (
-                  <article className="productRow" key={`${product.category}-${product.name}`}>
-                    <div className="productText">
-                      <p className="category">{product.category}</p>
-                      <h3>{product.name}</h3>
-                      <p>{product.description}</p>
-                      <dl>
-                        <div>
-                          <dt>volume</dt>
-                          <dd>{product.volume}</dd>
+                {categoryProducts.map((product, productIndex) => {
+                  const showImage = shouldShowProductImage(product, productIndex);
+
+                  return (
+                    <article
+                      className={`productRow${showImage ? "" : " productRowTextOnly"}`}
+                      key={`${product.category}-${product.name}`}
+                    >
+                      <div className="productText">
+                        <p className="category">{product.category}</p>
+                        <h3>{product.name}</h3>
+                        <p>{product.description}</p>
+                        <dl>
+                          <div>
+                            <dt>volume</dt>
+                            <dd>{product.volume}</dd>
+                          </div>
+                          <div>
+                            <dt>season</dt>
+                            <dd>{product.season}</dd>
+                          </div>
+                          <div>
+                            <dt>price</dt>
+                            <dd>{product.price}</dd>
+                          </div>
+                        </dl>
+                      </div>
+                      {showImage ? (
+                        <div className="productThumb">
+                          <Image
+                            src={getProductImage(product)}
+                            alt={`${product.name}のイメージ写真`}
+                            fill
+                            sizes="(min-width: 900px) 280px, 100vw"
+                          />
                         </div>
-                        <div>
-                          <dt>season</dt>
-                          <dd>{product.season}</dd>
-                        </div>
-                        <div>
-                          <dt>price</dt>
-                          <dd>{product.price}</dd>
-                        </div>
-                      </dl>
-                    </div>
-                    <div className="productThumb">
-                      <Image
-                        src={getProductImage(product)}
-                        alt={`${product.name}のイメージ写真`}
-                        fill
-                        sizes="(min-width: 900px) 280px, 100vw"
-                      />
-                    </div>
-                  </article>
-                ))}
+                      ) : null}
+                    </article>
+                  );
+                })}
               </div>
             </section>
           ))}

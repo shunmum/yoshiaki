@@ -347,6 +347,10 @@ button {
   padding: 30px 0;
 }
 
+.productRowTextOnly {
+  grid-template-columns: 1fr;
+}
+
 .productText .category {
   margin: 0 0 10px;
   color: var(--green-soft);
@@ -628,6 +632,10 @@ footer p {
     grid-template-columns: minmax(0, 1fr) minmax(220px, 0.45fr);
     gap: 6vw;
     align-items: center;
+  }
+
+  .productRowTextOnly {
+    grid-template-columns: 1fr;
   }
 
   .contactSection {
