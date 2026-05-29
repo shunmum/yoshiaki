@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { products } from "../data/products";
 import { siteConfig } from "../config/site";
 
@@ -153,20 +154,31 @@ export default function Home() {
                         <p className="category">{product.category}</p>
                         <h3>{product.name}</h3>
                         <p>{product.description}</p>
-                        <dl>
-                          <div>
-                            <dt>volume</dt>
-                            <dd>{product.volume}</dd>
-                          </div>
-                          <div>
-                            <dt>season</dt>
-                            <dd>{product.season}</dd>
-                          </div>
-                          <div>
-                            <dt>price</dt>
-                            <dd>{product.price}</dd>
-                          </div>
-                        </dl>
+                        {product.details ? (
+                          <dl className="productDetailList">
+                            {product.details.map((detail) => (
+                              <div key={`${product.name}-${detail.label}`}>
+                                <dt>{detail.label}</dt>
+                                <dd>{detail.value}</dd>
+                              </div>
+                            ))}
+                          </dl>
+                        ) : (
+                          <dl>
+                            <div>
+                              <dt>volume</dt>
+                              <dd>{product.volume}</dd>
+                            </div>
+                            <div>
+                              <dt>season</dt>
+                              <dd>{product.season}</dd>
+                            </div>
+                            <div>
+                              <dt>price</dt>
+                              <dd>{product.price}</dd>
+                            </div>
+                          </dl>
+                        )}
                       </div>
                       {showImage ? (
                         <div className="productThumb">
@@ -184,6 +196,13 @@ export default function Home() {
               </div>
             </section>
           ))}
+        </div>
+        <div className="salesNotes" aria-label="販売に関する注意事項">
+          <p>※箱代220円＋送料（実費）別途請求いたします。</p>
+          <p>※6本以上は、箱代サービスいたします。</p>
+          <p>※贈答用2本セットは、化粧箱500円＋送料（実費）別途請求。</p>
+          <p>※ワインの販売は、酒類販売免許の関係で通信販売と卸売となります。卸売ロット、価格につきましては別途ご相談ください。</p>
+          <p>※20歳未満の方の飲酒は法律で禁止されています。</p>
         </div>
       </section>
 
@@ -216,7 +235,13 @@ export default function Home() {
         <form className="contactForm" action={`mailto:${siteConfig.contactEmail}`} method="post" encType="text/plain">
           <label>
             お問い合わせ種別 <span>※必須</span>
-            <input name="inquiryType" required placeholder="例：ご注文、その他" />
+            <select name="inquiryType" required defaultValue="">
+              <option value="" disabled>
+                選択してください
+              </option>
+              <option value="ご注文">ご注文</option>
+              <option value="その他">その他</option>
+            </select>
           </label>
           <label>
             お名前 <span>※必須</span>
@@ -232,7 +257,12 @@ export default function Home() {
           </label>
           <label>
             ご希望の連絡方法
-            <input name="preferredContact" placeholder="例：メール、電話" />
+            <select name="preferredContact" defaultValue="">
+              <option value="">選択してください</option>
+              <option value="メール">メール</option>
+              <option value="電話">電話</option>
+              <option value="おまかせ">おまかせ</option>
+            </select>
           </label>
           <label>
             住所
@@ -262,6 +292,16 @@ export default function Home() {
             お問い合わせ内容
             <textarea name="message" rows={6} />
           </label>
+          <div className="ageCheck full">
+            <p>年齢確認が必要です。</p>
+            <label>
+              <input name="ageConfirmed" type="checkbox" value="20歳以上です" />
+              私は20歳以上です。
+            </label>
+            <p>
+              20歳未満の飲酒は法律で禁止されています。年齢が確認できない場合は酒類を販売いたしません。
+            </p>
+          </div>
           <button type="submit">送信する</button>
         </form>
       </section>
@@ -290,21 +330,19 @@ export default function Home() {
             <dt>メール</dt>
             <dd>
               <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+              <Link className="textLink" href="/alcohol-sales">
+                酒類販売管理者標識
+              </Link>
             </dd>
           </div>
           <div>
-            <dt>Instagramリンク</dt>
-            <dd>
-              <a href={siteConfig.sns.instagram} target="_blank" rel="noreferrer">
-                {siteConfig.sns.instagram}
+            <dt>SNS</dt>
+            <dd className="aboutSocials">
+              <a className="aboutSocial aboutSocialInstagram" href={siteConfig.sns.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                <InstagramIcon />
               </a>
-            </dd>
-          </div>
-          <div>
-            <dt>FACEBOOKリンク</dt>
-            <dd>
-              <a href={siteConfig.sns.facebook} target="_blank" rel="noreferrer">
-                {siteConfig.sns.facebook}
+              <a className="aboutSocial aboutSocialFacebook" href={siteConfig.sns.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                <FacebookIcon />
               </a>
             </dd>
           </div>

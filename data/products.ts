@@ -2,6 +2,10 @@ export type Product = {
   category: "ワイン" | "ブドウ" | "キウイフルーツ" | "ジュース" | "ジャム";
   name: string;
   description: string;
+  details?: {
+    label: string;
+    value: string;
+  }[];
   volume: string;
   season: string;
   price: string;
@@ -92,6 +96,18 @@ export const products: Product[] = [
     name: "牧ノ庄赤葡萄酒 2022",
     description:
       "山梨市牧丘町産の小公子を使用した赤葡萄酒。460本生産の、リリース前ワインです。",
+    details: [
+      { label: "タイプ", value: "赤フルボディ" },
+      { label: "品種", value: "小公子100%（自家農園）" },
+      { label: "樹齢", value: "20〜50年" },
+      { label: "醸造", value: "東晨洋酒株式会社（山梨県山梨市歌田66）" },
+      { label: "ALC.", value: "13%" },
+      { label: "酵母", value: "野生酵母" },
+      { label: "亜硫酸", value: "なし" },
+      { label: "本数", value: "460本" },
+      { label: "容量", value: "720ml" },
+      { label: "金額", value: "6,050円（税込）" }
+    ],
     volume: "720ml / アルコール分 13%",
     season: "通年 / 在庫状況により",
     price: "税込 6,050円",
