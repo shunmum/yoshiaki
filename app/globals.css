@@ -77,24 +77,16 @@ img {
 
 .siteBrand {
   display: flex;
-  gap: 10px;
   align-items: center;
   min-width: 0;
 }
 
 .siteBrand img {
-  width: 70px;
+  width: clamp(82px, 11vw, 132px);
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.92;
-}
-
-.siteBrand span {
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
-  font-size: clamp(0.96rem, 3vw, 1.2rem);
-  line-height: 1.4;
-  white-space: nowrap;
+  filter: none;
+  opacity: 1;
 }
 
 nav {
@@ -827,7 +819,7 @@ footer p {
   }
 
   .siteBrand img {
-    width: 58px;
+    width: 82px;
   }
 
   nav {

@@ -41,8 +41,7 @@ export default function Home() {
     <main>
       <header className="siteHeader">
         <a href="#top" className="siteBrand" aria-label="トップへ戻る">
-          <Image src={siteConfig.logo} alt="" width={60} height={36} />
-          <span>{siteConfig.farmName}</span>
+          <Image src={siteConfig.logo} alt={siteConfig.farmName} width={150} height={150} priority />
         </a>
         <nav className="siteNav" aria-label="主要ナビゲーション">
           <a href="#message" className="swapNav" aria-label="私たちについて">
