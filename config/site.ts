@@ -45,6 +45,7 @@ export const siteConfig = {
     }
   ],
   images: {
+    heroSlides: ["/images/TOP1.JPG", "/images/TOP2.jpg", "/images/TOP3.JPG"],
     hero:
       "https://images.unsplash.com/photo-1769967190366-1deaf0c78568?auto=format&fit=crop&w=1800&q=85",
     farm:

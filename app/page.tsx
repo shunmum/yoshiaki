@@ -81,13 +81,17 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroImage">
-          <Image
-            src={siteConfig.images.hero}
-            alt="朝の光が差す農園の風景"
-            fill
-            priority
-            sizes="100vw"
-          />
+          {siteConfig.images.heroSlides.map((image, index) => (
+            <div className="heroSlide" key={image}>
+              <Image
+                src={image}
+                alt={index === 0 ? "農園のトップ写真" : ""}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+              />
+            </div>
+          ))}
         </div>
         <div className="heroCenter">
           <h1>自然と共生する畑から</h1>
