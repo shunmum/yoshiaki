@@ -3,6 +3,7 @@ export const siteConfig = {
   farmNameEn: "Fruit Grower Sawanobori",
   brandInitials: "FGS",
   logo: "/images/sawanobori-header-logo.png",
+  favicon: "/images/favicon-white-bg.png",
   representatives: "澤登芳英 早苗",
   postalCode: "404-0003",
   locationLabel: "山梨県山梨市牧丘町倉科",

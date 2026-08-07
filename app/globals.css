@@ -62,7 +62,7 @@ img {
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: heroFade 18s infinite;
+  animation: heroFade 6s infinite;
 }
 
 .heroSlide:nth-child(1) {
@@ -70,11 +70,11 @@ img {
 }
 
 .heroSlide:nth-child(2) {
-  animation-delay: 6s;
+  animation-delay: 2s;
 }
 
 .heroSlide:nth-child(3) {
-  animation-delay: 12s;
+  animation-delay: 4s;
 }
 
 .heroSlide img {
@@ -83,12 +83,12 @@ img {
 
 @keyframes heroFade {
   0%,
-  28% {
+  27% {
     opacity: 1;
   }
 
-  38%,
-  90% {
+  34%,
+  93% {
     opacity: 0;
   }
 
@@ -556,13 +556,20 @@ dd,
 .letterSection {
   display: grid;
   gap: 40px;
-  margin: 96px 28px;
-  padding: 56px 28px;
-  border: 1px solid rgba(15, 46, 34, 0.18);
+  margin: 0;
+  padding: 94px 28px 82px;
   background:
-    linear-gradient(rgba(251, 248, 241, 0.86), rgba(251, 248, 241, 0.9)),
+    linear-gradient(rgba(8, 31, 22, 0.56), rgba(8, 31, 22, 0.68)),
     url("/images/BUDOU.JPG") center / cover;
-  box-shadow: 0 18px 42px rgba(15, 46, 34, 0.06);
+  color: #fffaf1;
+}
+
+.letterIntro,
+.letterList {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .letterIntro {
@@ -584,6 +591,10 @@ dd,
   line-height: 1.5;
 }
 
+.letterIntro h2 {
+  color: #fffaf1;
+}
+
 .letterIntro p {
   margin: 26px auto 0;
   max-width: 36rem;
@@ -594,7 +605,7 @@ dd,
 .letterList {
   display: grid;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 250, 241, 0.46);
 }
 
 .letterItem {
@@ -603,8 +614,8 @@ dd,
   gap: 18px;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--green);
+  border-bottom: 1px solid rgba(255, 250, 241, 0.46);
+  color: #fffaf1;
 }
 
 .letterItem span {
@@ -616,7 +627,7 @@ dd,
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.68rem;
   letter-spacing: 0.2em;
-  color: var(--muted);
+  color: rgba(255, 250, 241, 0.76);
 }
 
 .aboutList {
@@ -872,15 +883,9 @@ footer p {
   }
 
   .letterSection {
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .letterSection {
-    margin-top: 110px;
-    margin-bottom: 110px;
-    padding: 70px 72px;
+    max-width: none;
+    margin: 0;
+    padding: 110px 6vw;
   }
 
   .contactForm {
