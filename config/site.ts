@@ -50,16 +50,13 @@ export const siteConfig = {
       "https://images.unsplash.com/photo-1769967190366-1deaf0c78568?auto=format&fit=crop&w=1800&q=85",
     farm: "/images/OMOI.JPG",
     farming: "/images/NOUEN.jpg",
-    work:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1400&q=85",
+    work: "/images/HATAKE.JPG",
     products:
       "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=85",
     wine:
       "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=85",
-    grape:
-      "https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=1200&q=85",
-    kiwi:
-      "https://images.unsplash.com/photo-1585059895524-72359e06133a?auto=format&fit=crop&w=1200&q=85",
+    grape: "/images/BUDOU.JPG",
+    kiwi: "/images/KIWI.JPG",
     juice:
       "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1200&q=85",
     jam:

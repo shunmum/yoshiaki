@@ -6,6 +6,10 @@ import { siteConfig } from "../config/site";
 export const metadata: Metadata = {
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
+  icons: {
+    icon: siteConfig.logo,
+    apple: siteConfig.logo
+  },
   openGraph: {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
