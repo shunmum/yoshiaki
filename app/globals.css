@@ -665,6 +665,10 @@ dd,
   margin: 0 auto;
 }
 
+.aboutList dt {
+  color: #fffaf1;
+}
+
 .aboutList div {
   grid-template-columns: minmax(5.5rem, 0.34fr) minmax(0, 1fr);
   padding: 18px 0;
