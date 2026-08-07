@@ -346,6 +346,13 @@ export default function Home() {
       </section>
 
       <section className="aboutSection" id="about">
+        <Image
+          className="aboutBackground"
+          src={siteConfig.images.about}
+          alt=""
+          fill
+          sizes="100vw"
+        />
         <div className="aboutIntro">
           <p className="eyebrow">About</p>
           <h2>農園について</h2>

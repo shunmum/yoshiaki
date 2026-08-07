@@ -51,6 +51,7 @@ export const siteConfig = {
       "https://images.unsplash.com/photo-1769967190366-1deaf0c78568?auto=format&fit=crop&w=1800&q=85",
     farm: "/images/OMOI.JPG",
     farming: "/images/NOUEN.jpg",
+    about: "/images/NOUENNITUITE.JPG",
     work: "/images/HATAKE.JPG",
     products:
       "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=85",

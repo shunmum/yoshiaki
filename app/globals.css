@@ -547,10 +547,33 @@ dd,
 }
 
 .aboutSection {
+  position: relative;
   display: grid;
   gap: 36px;
+  overflow: hidden;
   padding: 94px 28px 76px;
-  background: var(--paper-deep);
+  background: var(--green);
+  color: #fffaf1;
+}
+
+.aboutSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(rgba(8, 31, 22, 0.62), rgba(8, 31, 22, 0.74));
+  pointer-events: none;
+}
+
+.aboutBackground {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.aboutSection > :not(.aboutBackground) {
+  position: relative;
+  z-index: 1;
 }
 
 .letterSection {
@@ -595,6 +618,10 @@ dd,
   color: #fffaf1;
 }
 
+.aboutIntro h2 {
+  color: #fffaf1;
+}
+
 .letterIntro p {
   margin: 26px auto 0;
   max-width: 36rem;
@@ -631,7 +658,7 @@ dd,
 }
 
 .aboutList {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 250, 241, 0.46);
   gap: 0;
   width: 100%;
   max-width: 760px;
@@ -641,7 +668,7 @@ dd,
 .aboutList div {
   grid-template-columns: minmax(5.5rem, 0.34fr) minmax(0, 1fr);
   padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 250, 241, 0.46);
 }
 
 .aboutList dd {
@@ -653,7 +680,7 @@ dd,
   width: fit-content;
   margin-top: 12px;
   border-bottom: 1px solid currentColor;
-  color: var(--green);
+  color: #fffaf1;
 }
 
 .aboutSocials {
