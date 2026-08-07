@@ -126,7 +126,6 @@ img {
   object-fit: contain;
   filter: none;
   opacity: 1;
-  box-shadow: 0 8px 24px rgba(8, 18, 13, 0.18);
 }
 
 nav {
