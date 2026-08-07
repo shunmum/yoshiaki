@@ -48,8 +48,8 @@ export const siteConfig = {
     heroSlides: ["/images/TOP1.JPG", "/images/TOP2.jpg", "/images/TOP3.JPG"],
     hero:
       "https://images.unsplash.com/photo-1769967190366-1deaf0c78568?auto=format&fit=crop&w=1800&q=85",
-    farm:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=85",
+    farm: "/images/OMOI.JPG",
+    farming: "/images/NOUEN.jpg",
     work:
       "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1400&q=85",
     products:

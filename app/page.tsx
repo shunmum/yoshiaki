@@ -145,6 +145,9 @@ export default function Home() {
       </TextImageSection>
 
       <section className="quietStatement" id="farming">
+        <div className="quietStatementImage">
+          <Image src={siteConfig.images.farming} alt="農園の風景" fill sizes="100vw" />
+        </div>
         <p className="eyebrow">Farming</p>
         <h2>農園</h2>
         <div className="sectionCopy">
